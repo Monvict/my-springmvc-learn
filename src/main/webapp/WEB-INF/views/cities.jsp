@@ -9,7 +9,7 @@
 </head>
 <body>
 <form action="${pageContext.request.contextPath }/item/queryItem.action" method="post">
-    城市列表：
+    城市列表：   <a href="${pageContext.request.contextPath }/city/add">新增</a>
     <table width="100%" border=1>
         <tr>
             <td>城市名称</td>
@@ -23,7 +23,11 @@
                 <td>${city.description}</td>
                 <td>${city.provinceId}</td>
 
-                <td><a href="${pageContext.request.contextPath }/city/edit?id=${city.id}">修改</a></td>
+                <td>
+
+                    <a href="${pageContext.request.contextPath }/city/edit?id=${city.id}">修改</a>
+                    <a href="${pageContext.request.contextPath }/city/delete?id=${city.id}">删除</a>
+                </td>
             </tr>
         </c:forEach>
     </table>
