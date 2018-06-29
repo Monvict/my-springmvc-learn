@@ -5,33 +5,25 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>查询商品列表</title>
+    <title>城市列表</title>
 </head>
 <body>
 <form action="${pageContext.request.contextPath }/item/queryItem.action" method="post">
-    查询条件：
+    城市列表：
     <table width="100%" border=1>
         <tr>
-            <td><input type="submit" value="查询" /></td>
-        </tr>
-    </table>
-    商品列表：
-    <table width="100%" border=1>
-        <tr>
-            <td>商品名称</td>
-            <td>商品价格</td>
-            <td>生产日期</td>
-            <td>商品描述</td>
+            <td>城市名称</td>
+            <td>城市简介</td>
+            <td>所属省份</td>
             <td>操作</td>
         </tr>
-        <c:forEach items="${itemsList}" var="item">
+        <c:forEach items="${cityList}" var="city">
             <tr>
-                <td>${item.name}</td>
-                <td>${item.price}</td>
-                <td>${item.date}</td>
-                <td>${item.detail}</td>
+                <td>${city.cityName}</td>
+                <td>${city.description}</td>
+                <td>${city.provinceId}</td>
 
-                <td><a href="${pageContext.request.contextPath }/items/editItems.action?id=${item.id}">修改</a></td>
+                <td><a href="${pageContext.request.contextPath }/city/edit?id=${city.id}">修改</a></td>
             </tr>
         </c:forEach>
     </table>

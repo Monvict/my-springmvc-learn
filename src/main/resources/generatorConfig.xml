@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!--要用到的MySQL.jar-->
+    <classPathEntry
+            location="D:\maven\repository\mysql\mysql-connector-java\5.1.12\mysql-connector-java-5.1.12.jar" />
+
+    <context id="mysqlgenerator" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <!-- 关闭自动生成的注释 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.100.181:3306/lotus?useUnicode=true&amp;characterEncoding=UTF-8"
+                        userId="root"
+                        password="123456"/>
+
+        <!--java Bean-->
+        <javaModelGenerator targetPackage="com.lotus.bean"
+                            targetProject="src/main/java"/>
+
+        <!--配置文件 *.xml-->
+        <sqlMapGenerator targetPackage="mybatis"
+                         targetProject="src/main/resources"/>
+
+        <!--数据库接口-->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.lotus.mapper"
+                             targetProject="src/main/java"/>
+
+        <!--配置表字段的映射-->
+        <table tableName="city"
+               domainObjectName="City" enableCountByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false">
+
+            <columnOverride column="id" jdbcType="INTEGER"
+                            javaType="java.lang.String" />
+            <columnOverride column="province_id" jdbcType="INTEGER"
+                            javaType="java.lang.String" />
+        </table>
+
+        <!--配置表字段的映射-->
+        <table tableName="messages"
+               domainObjectName="Message" enableCountByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false">
+
+            <columnOverride column="id" jdbcType="INTEGER"
+                            javaType="java.lang.String" />
+            <columnOverride column="time" jdbcType="INTEGER"
+                            javaType="java.lang.String" />
+        </table>
+
+    </context>
+
+</generatorConfiguration>

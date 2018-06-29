@@ -46,6 +46,14 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>application/json;charset=UTF-8</value>
+                <value>application/x-www-form-urlencoded;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
 
     <!--***************注解的映射器和适配器（可以使用<mvc:annotation-driven/>代替，且更方便）******************-->
     <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>-->

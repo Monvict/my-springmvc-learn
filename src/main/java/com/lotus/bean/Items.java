@@ -1,9 +1,12 @@
 package com.lotus.bean;
 
+import lombok.Data;
+
 /**
  * @author Tony
  * 2018-06-26 18:26
  **/
+@Data
 public class Items {
 
     private int id;
@@ -12,37 +15,7 @@ public class Items {
 
     private String detail;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private String date;
 
     private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public String getDetail() {
-        return detail;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
 }

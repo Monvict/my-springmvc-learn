@@ -1,5 +1,6 @@
 package com.lotus;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,12 +10,27 @@ import java.util.List;
  **/
 public class Test {
     public static void main(String[] args) {
-        List<String> list = new LinkedList<>();
+//        List<String> list = new LinkedList<>();
+//
+//        list.add(0, "A");
+//        list.add(0, "B");
+//        list.add(0, "C");
+//        System.out.println("Nice to meet you");
+//        System.out.println(list);
 
-        list.add(0, "A");
-        list.add(0, "B");
-        list.add(0, "C");
+        String sql = "select * from cs_user where id in ";
+        List<String> list = new ArrayList<>();
+        list.add("aa");
+        list.add("bb");
+        list.add("cc");
 
-        System.out.println(list);
+        StringBuffer sb =  new StringBuffer(sql);
+        sb.append("(");
+        for(int i = 0; i<list.size(); i++){
+            sb.append("?,");
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        sb.append(")");
+        System.out.println(sb.toString());
     }
 }

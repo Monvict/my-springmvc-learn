@@ -4,8 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-    <h3>Hello Lotus, Welcom!!!!</h3>
-    <span id="dateNav">You are welcomed!!!</span>
-    <span id="timeNav">And Thank you</span>
+    <h3>恭喜你，操作成功了</h3>
 </body>
 </html>
