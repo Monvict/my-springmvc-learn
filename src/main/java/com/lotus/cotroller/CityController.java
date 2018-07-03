@@ -5,10 +5,15 @@ import com.lotus.mapper.CityMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author Tony
@@ -26,8 +31,9 @@ public class CityController {
      * @return
      */
     @RequestMapping("/cities")
-    public ModelAndView getCities() {
+    public ModelAndView getCities() throws Exception {
         List<City> cities = cityMapper.selectAll();
+        Thread.sleep(new Random().nextInt(1000));
 
         ModelAndView mv = new ModelAndView();
         mv.addObject("cityList", cities);
@@ -84,12 +90,24 @@ public class CityController {
     }
 
     @PostMapping("/city/editSubmit")
-    public ModelAndView editCitySubmit(@RequestBody City city) {
-
+    public ModelAndView editCitySubmit(@Validated City city, BindingResult bindingResult) {
         log.info("Receive ciyt {}", city);
-        cityMapper.updateByPrimaryKeySelective(city);
-
         ModelAndView mv = new ModelAndView();
+
+        //获取校验的错误信息
+        if(bindingResult.hasErrors()){
+            //输出错误信息
+            List<ObjectError> allErrors = bindingResult.getAllErrors();
+            for(ObjectError error : allErrors){
+                //输出错误信息
+                log.warn("Get error message {}",error.getDefaultMessage());
+            }
+            mv.addObject("allErrors", allErrors);//将错误信息传递到页面
+            mv.setViewName("cityEdit");
+            return mv;
+        }
+
+        cityMapper.updateByPrimaryKeySelective(city);
         mv.setViewName("redirect:/cities");
 
         return mv;

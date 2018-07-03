@@ -55,8 +55,35 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
         </property>
     </bean>
 
+    <!--参数校验配置-->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <!--一定要加上classpath,否则读取不到信息-->
+                <value>classpath:config/customValidMessages</value>
+            </list>
+        </property>
+        <property name="cacheSeconds" value="20"/>
+        <property name="defaultEncoding" value="utf-8"/>
+    </bean>
+
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+        <property name="validationMessageSource" ref="messageSource"/>
+    </bean>
+
+    <!--拦截器配置-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller -->
+            <mvc:mapping path="/**"/>
+            <bean class="com.lotus.interceptor.TimeCostInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <bean id="conversionService" class="org.springframework.core.convert.support.DefaultConversionService"/>
     <!--***************注解的映射器和适配器（可以使用<mvc:annotation-driven/>代替，且更方便）******************-->
     <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>-->
     <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>-->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven conversion-service="conversionService" validator="validator"/>
 </beans>

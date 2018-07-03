@@ -9,6 +9,14 @@
     <title>修改城市</title>
 </head>
 <body>
+
+<!-- 显示错误信息 -->
+<c:if test="${allErrors != null}">
+    <c:forEach items="${allErrors}" var="error">
+        ${error.defaultMessage }
+    </c:forEach>
+</c:if>
+
 <form id="cityForm" action="${pageContext.request.contextPath }/city/editSubmit" method="post">
     <input type="hidden" name="id" value="${city.id }" /> 修改商品信息：
     <table width="100%" border=1>

@@ -13,7 +13,6 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
     <script type="text/javascript">
         $("#mySubmit").click(function () {
-            alert("你真棒，真敢点!!!")
             var data = {id:1,cityName:"赣州市22",provinceId:2,description:"感觉有点难ww"}
             var str = JSON.stringify(data);
             alert(str)

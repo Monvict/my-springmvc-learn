@@ -36,7 +36,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!-- 字符过滤器(可以解决form表单提交中午乱码的问题) -->
+    <!-- 字符过滤器(可以解决form表单提交中文乱码的问题) -->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
