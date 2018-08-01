@@ -34,8 +34,6 @@ public class TimeCostInterceptor extends HandlerInterceptorAdapter {
                                 Object handler, Exception ex) {
         LocalDateTime endTime = LocalDateTime.now();
         Duration duration = Duration.between(startTimeLocal.get(), endTime);
-        log.info("URL = {}", request.getRequestURL().toString());
-        log.info("URI = {}", request.getRequestURI());
         log.info("Total cost {} ms for [{}]", duration.toMillis(), request.getRequestURI());
     }
 }
