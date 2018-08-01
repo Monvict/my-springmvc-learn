@@ -8,6 +8,7 @@
 </body>
 
 <a href="http://localhost:8080/cities">城市列表</a><br>
+<a href="http://localhost:8080/register">注册</a><br>
 <input id="mySubmit" type="submit" value="测试">
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
