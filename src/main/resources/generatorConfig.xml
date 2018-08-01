@@ -34,26 +34,36 @@
                              targetProject="src/main/java"/>
 
         <!--配置表字段的映射-->
-        <table tableName="city"
-               domainObjectName="City" enableCountByExample="false"
+        <!--<table tableName="city"-->
+               <!--domainObjectName="City" enableCountByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false">-->
+
+            <!--<columnOverride column="id" jdbcType="INTEGER"-->
+                            <!--javaType="java.lang.String" />-->
+            <!--<columnOverride column="province_id" jdbcType="INTEGER"-->
+                            <!--javaType="java.lang.String" />-->
+        <!--</table>-->
+
+        <!--<table tableName="messages"-->
+               <!--domainObjectName="Message" enableCountByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false">-->
+
+            <!--<columnOverride column="id" jdbcType="INTEGER"-->
+                            <!--javaType="java.lang.String" />-->
+            <!--<columnOverride column="time" jdbcType="INTEGER"-->
+                            <!--javaType="java.lang.String" />-->
+        <!--</table>-->
+
+        <table tableName="user"
+               domainObjectName="User" enableCountByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false">
 
             <columnOverride column="id" jdbcType="INTEGER"
                             javaType="java.lang.String" />
-            <columnOverride column="province_id" jdbcType="INTEGER"
-                            javaType="java.lang.String" />
-        </table>
-
-        <!--配置表字段的映射-->
-        <table tableName="messages"
-               domainObjectName="Message" enableCountByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false">
-
-            <columnOverride column="id" jdbcType="INTEGER"
-                            javaType="java.lang.String" />
-            <columnOverride column="time" jdbcType="INTEGER"
+            <columnOverride column="gender" jdbcType="INTEGER"
                             javaType="java.lang.String" />
         </table>
 
