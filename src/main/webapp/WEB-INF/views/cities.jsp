@@ -8,6 +8,10 @@
     <title>城市列表</title>
 </head>
 <body>
+当前用户：【${userName}】
+<c:if test="${username != null}">
+    <a href="${pageContext.request.contextPath }/logout">退出</a>
+</c:if>
 <form action="${pageContext.request.contextPath }/item/queryItem.action" method="post">
     城市列表：   <a href="${pageContext.request.contextPath }/city/add">新增</a>
     <table width="100%" border=1>
