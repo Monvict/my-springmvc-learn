@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.lotus.com/sample"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.lotus.com/sample"
+            elementFormDefault="qualified">
+    <xsd:element name="entity">
+        <xsd:complexType>
+            <xsd:attribute name="id" type="xsd:string" />
+            <xsd:attribute name="class" type="xsd:string" />
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
