@@ -1,5 +1,7 @@
 package com.lotus;
 
+import com.lotus.utils.DateUtils;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -32,5 +34,11 @@ public class Test {
         sb.deleteCharAt(sb.length() - 1);
         sb.append(")");
         System.out.println(sb.toString());
+
+
+        System.out.println(DateUtils.addSeconds("20181223123456", 1000));
+        System.out.println(DateUtils.addHours("20181223123456", 1));
+        System.out.println(DateUtils.addMinuts("20181223123456", 1));
+
     }
 }
