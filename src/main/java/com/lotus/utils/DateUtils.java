@@ -21,4 +21,12 @@ public class DateUtils {
     public static String addMinuts(String pre, long minuteValue) {
         return addSeconds(pre, minuteValue * 60);
     }
+
+
+    /**
+     * 给当前时间加上N小时
+     */
+    public static String addHours(String pre, long minuteValue) {
+        return addMinuts(pre, minuteValue * 60);
+    }
 }
