@@ -26,7 +26,16 @@ public class DateUtils {
     /**
      * 给当前时间加上N小时
      */
-    public static String addHours(String pre, long minuteValue) {
-        return addMinuts(pre, minuteValue * 60);
+    public static String addHours(String pre, long hourValue) {
+        return addMinuts(pre, hourValue * 60);
     }
+
+
+    /**
+     * 当前基础上增加半天
+     */
+    public static String addHalfDay(String pre) {
+        return addHours(pre, 12);
+    }
+
 }

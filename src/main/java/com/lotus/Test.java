@@ -37,5 +37,9 @@ public class Test {
 
         System.out.println(DateUtils.addSeconds("20181223123456", 1000));
         System.out.println(DateUtils.addHours("20181223123456", 1));
+
+        System.out.println(DateUtils.addSeconds("20181223123456", 1000));
+        System.out.println(DateUtils.addHours("20181223123456", 1));
+        System.out.println(DateUtils.addMinuts("20181223123456", 1));
     }
 }
