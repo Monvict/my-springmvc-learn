@@ -29,4 +29,12 @@ public class DateUtils {
         return addMinuts(pre, hourValue * 60);
     }
 
+
+    /**
+     * 当前基础上增加半天
+     */
+    public static String addHalfDay(String pre) {
+        return addHours(pre, 12);
+    }
+
 }
