@@ -29,6 +29,7 @@ public class Test {
         list.add("gg");
         list.add("hh");
         list.add("dd");
+        list.add("mmmm");
 
 
         StringBuffer sb =  new StringBuffer(sql);
