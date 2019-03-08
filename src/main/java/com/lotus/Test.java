@@ -25,6 +25,9 @@ public class Test {
         list.add("aa");
         list.add("bb");
         list.add("cc");
+        list.add("ff");
+        list.add("gg");
+        list.add("hh");
 
         StringBuffer sb =  new StringBuffer(sql);
         sb.append("(");
