@@ -28,6 +28,8 @@ public class Test {
         list.add("ff");
         list.add("gg");
         list.add("hh");
+        list.add("dd");
+
 
         StringBuffer sb =  new StringBuffer(sql);
         sb.append("(");
