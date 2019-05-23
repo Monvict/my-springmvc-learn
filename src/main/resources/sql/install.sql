@@ -16,6 +16,11 @@ phonenum char(11),
 email varchar(32)
 );
 
+create table city(
+id int(4) primary key auto_increment,
+provinceId int(4) not null
+);
+
 -- 初始化数据
 insert into province(name, area, populations) values ("江西省", 166999.361, 45120002);
 insert into province(name, area, populations) values ("广东省", 179736.258, 111690962);
