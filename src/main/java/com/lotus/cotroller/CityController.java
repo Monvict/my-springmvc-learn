@@ -26,6 +26,20 @@ public class CityController {
     @Autowired
     private CityMapper cityMapper;
 
+
+    @RequestMapping("/all-city")
+    @ResponseBody
+    public List<City> getAllCities() {
+        return cityMapper.selectAll();
+    }
+
+    @RequestMapping("/update-city")
+    @ResponseBody
+    public String updateCity(City cityInfo) {
+        cityMapper.updateByPrimaryKeySelective(cityInfo);
+        return "update city info successfully";
+    }
+
     /**
      * 所有城市
      * @return
