@@ -46,14 +46,14 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-        <property name="supportedMediaTypes">
-            <list>
-                <value>application/json;charset=UTF-8</value>
-                <value>application/x-www-form-urlencoded;charset=UTF-8</value>
-            </list>
-        </property>
-    </bean>
+    <!--<bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
+        <!--<property name="supportedMediaTypes">-->
+            <!--<list>-->
+                <!--<value>application/json;charset=UTF-8</value>-->
+                <!--<value>application/x-www-form-urlencoded;charset=UTF-8</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
 
     <!--参数校验配置-->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
@@ -87,6 +87,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
             <!--<bean class="com.lotus.interceptor.LoginInterceptor"/>-->
         <!--</mvc:interceptor>-->
     <!--</mvc:interceptors>-->
+
 
     <bean id="conversionService" class="org.springframework.core.convert.support.DefaultConversionService"/>
     <!--***************注解的映射器和适配器（可以使用<mvc:annotation-driven/>代替，且更方便）******************-->
