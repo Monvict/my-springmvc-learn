@@ -17,7 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-      <spring.version>4.3.1.RELEASE</spring.version>
+      <spring.version>4.3.2.RELEASE</spring.version>
       <mybatis.version>3.2.1</mybatis.version>
       <slf4j.version>1.7.7</slf4j.version>
       <log4j.version>1.2.17</log4j.version>
@@ -96,6 +96,13 @@
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-test</artifactId>
+          <version>4.3.1.RELEASE</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context-support</artifactId>
           <version>${spring.version}</version>
       </dependency>
 
@@ -151,6 +158,14 @@
           <artifactId>jstl</artifactId>
           <version>1.2</version>
       </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
+      <dependency>
+          <groupId>org.freemarker</groupId>
+          <artifactId>freemarker</artifactId>
+          <version>2.3.23</version>
+      </dependency>
+
 
       <dependency>
           <groupId>taglibs</groupId>
